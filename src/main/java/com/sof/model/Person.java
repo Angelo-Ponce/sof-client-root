@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
@@ -42,14 +42,12 @@ public class Person {
     @Column(length = 30)
     private String createdByUser;
 
-    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_date")
-    private Date createdDate;
+    private LocalDateTime createdDate;
 
     @Column(length = 30)
     private String lastModifiedByUser;
 
-    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "last_modified_date")
-    private Date lastModifiedDate;
+    private LocalDateTime lastModifiedDate;
 }
