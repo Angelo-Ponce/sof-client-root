@@ -8,7 +8,6 @@ import com.sof.service.IClientService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Service
@@ -30,7 +29,6 @@ public class ClientServiceImpl extends CRUDServiceImpl<Client, Long> implements 
     @Override
     public Client save(Client client, String user) {
         client.setCreatedByUser(user);
-        client.setCreatedDate(LocalDateTime.now());
         return repository.save(client);
     }
 
